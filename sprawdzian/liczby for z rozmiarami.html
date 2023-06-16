@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Числа в порядку зростання</title>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+  <style id="size-styles">
+  </style>
+</head>
+<body>
+  <h1>Числа</h1>
+  <ul id="number-list"></ul>
+
+  <script>
+    var numberListElement = document.getElementById("number-list");
+    var sizeStylesElement = document.getElementById("size-styles");
+    var sizeStyles = "";
+
+    for (var i = 1; i <= 10; i++) {
+      var listItem = document.createElement("li");
+      listItem.innerText = i;
+
+      var colorClass = "red";
+      var sizeClass = "size-" + i;
+      var fontSize = 12 + (i * 2); // Обчислення розміру літер
+
+      sizeStyles += "." + sizeClass + " { font-size: " + fontSize + "px; } ";
+      listItem.classList.add(colorClass, sizeClass);
+
+      numberListElement.appendChild(listItem);
+    }
+
+    sizeStylesElement.innerText = sizeStyles; // Додавання стилів розмірів до сторінки
+  </script>
+</body>
+</html>

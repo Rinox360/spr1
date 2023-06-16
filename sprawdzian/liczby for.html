@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wyświetlanie liczb z pętlą for</title>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Liczby</h1>
+  <ul id="number-list"></ul>
+
+  <script>
+    var numberListElement = document.getElementById("number-list");
+
+    for (var i = 10; i <= 20; i++) {
+      var listItem = document.createElement("li");
+      listItem.innerText = "Liczba: " + i;
+      listItem.classList.add("red"); // Dodanie klasy "red" do elementu
+      numberListElement.appendChild(listItem);
+    }
+  </script>
+</body>
+</html>

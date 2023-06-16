@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Приклад використання конструкції if</title>
+</head>
+<body>
+  <h1>Простий приклад використання конструкції if</h1>
+
+  <label for="number">Введіть число:</label>
+  <input type="number" id="number" name="number" />
+
+  <button onclick="checkNumber()">Перевірити</button>
+
+  <script>
+    function checkNumber() {
+      var number = parseInt(document.getElementById("number").value);
+
+      if (isNaN(number)) {
+        alert("Введіть коректне число!");
+      } else {
+        if (number > 0) {
+          document.write("<p>Число є позитивним.</p>");
+        } else if (number < 0) {
+          document.write("<p>Число є від'ємним.</p>");
+        } else {
+          document.write("<p>Число дорівнює нулю.</p>");
+        }
+      }
+    }
+  </script>
+</body>
+</html>

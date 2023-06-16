@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Використання псевдоелементів та збільшення тексту</title>
+  <style>
+    .red {
+      color: red;
+    }
+    .size-1 {
+      font-size: 16px;
+    }
+    .size-2 {
+      font-size: 20px;
+    }
+    .size-3 {
+      font-size: 24px;
+    }
+    .size-4 {
+      font-size: 28px;
+    }
+    .size-5 {
+      font-size: 32px;
+    }
+  </style>
+  <style>
+    .name {
+      position: relative;
+    }
+
+    .name::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      font-weight: bold;
+      color: red;
+    }
+
+    .name span.red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Використання псевдоелементів та збільшення тексту</h1>
+
+  <div class="name size-1"><span class="red">D</span>mytro <span class="red">N</span>eprozvannyi</div>
+  <div class="name size-2"><span class="red">D</span>mytro <span class="red">N</span>eprozvannyi</div>
+  <div class="name size-3"><span class="red">D</span>mytro <span class="red">N</span>eprozvannyi</div>
+  <div class="name size-4"><span class="red">D</span>mytro <span class="red">N</span>eprozvannyi</div>
+  <div class="name size-5"><span class="red">D</span>mytro <span class="red">N</span>eprozvannyi</div>
+
+  <script>
+    var nameElements = document.querySelectorAll(".name");
+
+    nameElements.forEach(function (nameElement, index) {
+      var sizeClass = "size-" + (index + 1);
+      nameElement.classList.add(sizeClass);
+    });
+  </script>
+</body>
+</html>
